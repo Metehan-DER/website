@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metehan DER - Flutter Geliştirici</title>
+    <style>
+        /* Genel Stil */
+        :root {
+            --primary-color: #7c5cff;
+            --secondary-color: #ff5c8d;
+            --background-color: #f5f5f7;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --accent-color: #ffcb5c;
+            --border-radius: 15px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill, .project {
+            background-color: rgba(124, 92, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Metehan DER</h1>
+            <p>Flutter ile Mobil ve Masaüstü Uygulamalar Geliştiriyorum</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hakkımda -->
+        <section>
+            <h2>Hakkımda</h2>
+            <p>
+                Merhaba, ben Metehan DER. Flutter ile mobil uygulamalar geliştiriyorum ve masaüstü uygulamalar da geliştirdim. 
+                Kullanıcı dostu, modern ve performanslı uygulamalar oluşturmaya odaklanıyorum. 
+                Yeni teknolojiler öğrenmeyi ve projeler üzerinde çalışmayı seviyorum.
+            </p>
+        </section>
+
+        <!-- Yetenekler -->
+        <section>
+            <h2>Yetenekler</h2>
+            <div class="skills">
+                <div class="skill">Flutter</div>
+                <div class="skill">Dart</div>
+                <div class="skill">Firebase</div>
+                <div class="skill">REST API</div>
+                <div class="skill">UI/UX Tasarım</div>
+                <div class="skill">Masaüstü Uygulamalar</div>
+            </div>
+        </section>
+
+        <!-- Projeler -->
+        <section>
+            <h2>Projeler</h2>
+            <div class="projects">
+                <div class="project">Mobil E-Ticaret Uygulaması</div>
+                <div class="project">Not Alma Uygulaması</div>
+                <div class="project">Masaüstü Dosya Yöneticisi</div>
+                <div class="project">Sosyal Medya Uygulaması</div>
+            </div>
+        </section>
+
+        <!-- İletişim -->
+        <section>
+            <h2>İletişim</h2>
+            <p>
+                Benimle iletişime geçmek için aşağıdaki bilgileri kullanabilirsiniz:
+            </p>
+            <ul>
+                <li><strong>E-posta:</strong> <a href="mailto:metehan.der@example.com">metehan.der@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/metehander" target="_blank">linkedin.com/in/metehander</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/metehander" target="_blank">github.com/metehander</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> Metehan DER. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- Dinamik Yıl -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
