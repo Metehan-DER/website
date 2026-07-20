@@ -49,7 +49,6 @@
   a{color:inherit;}
   a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
 
-  /* ---------- NAV ---------- */
   nav{
     position:sticky; top:0; z-index:100;
     background:rgba(11,30,61,0.88);
@@ -69,9 +68,7 @@
     transition:color .2s ease;
   }
   .nav-links a:hover{color:var(--accent);}
-  .nav-toggle{display:none;}
 
-  /* ---------- HERO ---------- */
   .hero{padding:96px 0 72px; position:relative;}
   .eyebrow{
     font-family:var(--mono); font-size:12px; color:var(--accent);
@@ -101,7 +98,6 @@
   .btn-ghost{border:1px solid var(--line); color:var(--paper);}
   .btn-ghost:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px);}
 
-  /* ---------- PIPELINE SIGNATURE ---------- */
   .pipeline{
     margin-top:64px; border:1px solid rgba(95,224,211,0.25); border-radius:var(--radius);
     background:rgba(18,42,80,0.5); padding:28px 20px 22px;
@@ -125,7 +121,6 @@
   .pipe-node h4{font-family:var(--display); font-size:15px; color:var(--paper); margin-bottom:6px;}
   .pipe-node p{font-family:var(--mono); font-size:11px; color:var(--paper-dim); line-height:1.5;}
 
-  /* ---------- SECTIONS ---------- */
   section{padding:88px 0;}
   section + section{border-top:1px solid rgba(95,224,211,0.12);}
   .section-head{margin-bottom:44px;}
@@ -136,7 +131,6 @@
   }
   .section-sub{color:var(--paper-dim); font-size:15px; margin-top:10px; max-width:56ch;}
 
-  /* About */
   .about-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start;}
   .about-text p{color:var(--paper-dim); margin-bottom:16px; font-size:15.5px;}
   .about-text strong{color:var(--paper); font-weight:600;}
@@ -148,7 +142,6 @@
   .stat-box .num{font-family:var(--display); font-size:30px; color:var(--accent); font-weight:700;}
   .stat-box .label{font-family:var(--mono); font-size:12px; color:var(--paper-dim); text-transform:uppercase; letter-spacing:0.05em; margin-top:4px;}
 
-  /* Skills */
   .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:32px;}
   .skill-group h3{
     font-family:var(--mono); font-size:12px; color:var(--accent);
@@ -163,7 +156,6 @@
   }
   .chip:hover{border-color:var(--accent); color:var(--accent);}
 
-  /* Work / product cards */
   .work-list{display:flex; flex-direction:column; gap:1px; background:rgba(95,224,211,0.15);}
   .work-item{
     background:var(--ink); padding:26px 24px; display:grid;
@@ -172,30 +164,46 @@
   .work-item h3{font-family:var(--display); font-size:19px; color:var(--paper); margin-bottom:8px;}
   .work-item p{color:var(--paper-dim); font-size:14.5px;}
   .work-tag{font-family:var(--mono); font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.06em;}
+  .work-shot{
+    margin-top:14px; max-width:260px; width:100%; border-radius:var(--radius);
+    border:1px solid var(--line); display:block;
+  }
 
-  /* Project cards */
   .project-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px;}
   .project-card{
     position:relative; border:1px solid var(--line); border-radius:var(--radius);
-    background:rgba(18,42,80,0.4); padding:24px; transition:transform .2s ease, border-color .2s ease;
+    background:rgba(18,42,80,0.4); overflow:hidden;
+    transition:transform .2s ease, border-color .2s ease;
   }
   .project-card:hover{transform:translateY(-4px); border-color:var(--accent);}
+  .project-shot{width:100%; height:210px; object-fit:cover; display:block; border-bottom:1px solid var(--line); background:var(--ink-2);}
+  .project-body{padding:20px;}
   .project-card h3{font-family:var(--display); font-size:17px; color:var(--paper); margin-bottom:10px; padding-right:70px;}
   .project-card p{color:var(--paper-dim); font-size:13.5px; margin-bottom:14px;}
   .stamp{
-    position:absolute; top:18px; right:16px;
+    position:absolute; top:14px; right:14px; z-index:2;
     font-family:var(--mono); font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase;
-    border:1.5px dashed var(--accent-2); color:var(--accent-2);
+    border:1.5px dashed var(--accent-2); color:var(--accent-2); background:rgba(11,30,61,0.85);
     padding:3px 7px; border-radius:2px; transform:rotate(6deg);
   }
   .stamp.live{border-color:var(--accent); color:var(--accent);}
-  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px;}
   .tag-row span{
     font-family:var(--mono); font-size:11px; color:var(--paper-dim);
     border:1px solid var(--line); padding:3px 8px; border-radius:2px;
   }
 
-  /* Education */
+  .store-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .store-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.03em; text-transform:uppercase;
+    padding:6px 10px; border:1px solid var(--line); border-radius:2px;
+    text-decoration:none; color:var(--paper-dim); transition:all .2s ease;
+  }
+  .store-badge.active{border-color:var(--accent); color:var(--accent);}
+  .store-badge.active:hover{background:var(--accent); color:var(--ink);}
+  .store-badge.disabled{opacity:.45; cursor:not-allowed; pointer-events:none;}
+
   .edu-block{border-left:2px solid var(--accent); padding-left:22px; margin-bottom:28px;}
   .edu-block h3{font-family:var(--display); font-size:18px; color:var(--paper);}
   .edu-block .meta{font-family:var(--mono); font-size:12px; color:var(--paper-dim); margin:6px 0 12px;}
@@ -209,7 +217,6 @@
   }
   .cert-item strong{color:var(--paper); display:block; font-family:var(--body); font-size:14px; margin-bottom:4px;}
 
-  /* Contact / Title block footer */
   footer{padding:64px 0 40px; border-top:1px solid rgba(95,224,211,0.18);}
   .titleblock{
     border:1px solid var(--line); border-radius:var(--radius);
@@ -223,7 +230,6 @@
   .tb-cell a:hover{color:var(--accent);}
   .footer-note{margin-top:22px; font-family:var(--mono); font-size:11px; color:var(--paper-dim); text-align:center;}
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width:860px){
     .about-grid{grid-template-columns:1fr;}
     .work-item{grid-template-columns:1fr; gap:10px;}
@@ -264,7 +270,7 @@
     <div class="eyebrow">Kütahya, Türkiye · Taşınmaya Açık</div>
     <h1>Fikirden mağazaya, tek elden mobil ürün.</h1>
     <p class="role">Flutter Mobil Uygulama Geliştirici · Software Team Lead</p>
-    <p class="desc">Çeliker Teknoloji'de mobil ekibe liderlik ediyorum. Wireframe'den mağaza yayınına kadar her aşamayı — tasarım, geliştirme, backend ve yayın süreçleri — tek bir ürün ekosistemimantığıyla yürütüyorum.</p>
+    <p class="desc">Çeliker Teknoloji'de mobil ekibe liderlik ediyorum. Wireframe'den mağaza yayınına kadar her aşamayı — tasarım, geliştirme, backend ve yayın süreçleri — tek bir ürün ekosistemi mantığıyla yürütüyorum.</p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">Projeleri Gör</a>
       <a href="mailto:tr.metehander@gmail.com" class="btn btn-ghost">İletişime Geç</a>
@@ -423,6 +429,7 @@
         <div>
           <h3>Cihaz bağlantısı &amp; login modülü</h3>
           <p>Cihaz bağlantısı ve giriş arayüzlerini kapsayan mobil uygulama modülünü geliştirdim.</p>
+          <img class="work-shot" src="images/perde-kontrol.jpg" alt="Perde Kontrol uygulaması ekran görüntüsü — perde listesi ve aç/kapat kontrolleri" loading="lazy">
         </div>
       </div>
     </div>
@@ -440,65 +447,114 @@
 
       <div class="project-card">
         <span class="stamp live">Yayında</span>
-        <h3>🧩 Puzzle Oyunu</h3>
-        <p>Play Store'da yayında olan bulmaca oyunu.</p>
-        <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>AdMob</span></div>
+        <div class="project-body">
+          <h3>🧩 Puzzle Oyunu</h3>
+          <p>Play Store'da yayında olan bulmaca oyunu.</p>
+          <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>AdMob</span></div>
+          <div class="store-row">
+            <!-- TODO: Gerçek Play Store linkini buraya ekle -->
+            <a href="#" class="store-badge active">Google Play →</a>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Geliştiriliyor</span>
-        <h3>🌍 QuakeHub</h3>
-        <p>Canlı harita işaretleyicileri, deprem eğitim içeriği ve yakınlarım/güvenlik modülü sunan deprem takip uygulaması.</p>
-        <div class="tag-row"><span>Flutter</span><span>Supabase</span><span>Realtime</span></div>
+        <img class="project-shot" src="images/weather-app.jpg" alt="Kütahya için hava durumu uygulaması ekran görüntüsü" loading="lazy">
+        <div class="project-body">
+          <h3>🌤️ Hava Durumu Uygulaması</h3>
+          <p>Konum bazlı anlık sıcaklık, hissedilen sıcaklık, nem, rüzgar ve 24 saatlik tahmin sunan uygulama.</p>
+          <div class="tag-row"><span>Flutter</span><span>Weather API</span></div>
+          <div class="store-row">
+            <span class="store-badge disabled">Google Play · Yakında</span>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Geliştiriliyor</span>
-        <h3>🏰 Aethelgard</h3>
-        <p>Kriz mekanikleri ve kaynak yönetimi sistemleri barındıran, kart tabanlı karanlık ortaçağ yerleşim kurma oyunu.</p>
-        <div class="tag-row"><span>Flutter</span><span>Custom Painter</span></div>
+        <img class="project-shot" src="images/aethelgard.jpg" alt="Aethelgard oyunu ekran görüntüsü — üretim oranları ve yerleşim paneli" loading="lazy">
+        <div class="project-body">
+          <h3>🏰 Aethelgard</h3>
+          <p>Kriz mekanikleri ve kaynak yönetimi sistemleri barındıran, kart tabanlı karanlık ortaçağ yerleşim kurma oyunu.</p>
+          <div class="tag-row"><span>Flutter</span><span>Custom Painter</span></div>
+          <div class="store-row">
+            <span class="store-badge disabled">Google Play · Yakında</span>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Kapalı Test</span>
-        <h3>🧱 Shape Breaker</h3>
-        <p>Güç artırıcılar, boss mekanikleri ve nadirlik seviyeli kartlara sahip tuğla kırma oyunu.</p>
-        <div class="tag-row"><span>Flutter</span><span>Custom Painter</span><span>Firebase</span></div>
+        <div class="project-body">
+          <h3>🧱 Shape Breaker</h3>
+          <p>Güç artırıcılar, boss mekanikleri ve nadirlik seviyeli kartlara sahip tuğla kırma oyunu.</p>
+          <div class="tag-row"><span>Flutter</span><span>Custom Painter</span><span>Firebase</span></div>
+          <div class="store-row">
+            <span class="store-badge disabled">Google Play · Yakında</span>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Kapalı Test</span>
-        <h3>📝 LumiNote</h3>
-        <p>Özlü söz paylaşımı ve kişisel not tutma özellikleri sunan uygulama.</p>
-        <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Hive</span></div>
+        <img class="project-shot" src="images/luminote-cover.jpg" alt="LumiNote uygulaması tanıtım görseli — alıntı paylaşım ekranı" loading="lazy">
+        <div class="project-body">
+          <h3>📝 LumiNote</h3>
+          <p>Özlü söz paylaşımı ve kişisel not tutma özellikleri sunan uygulama.</p>
+          <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Hive</span></div>
+          <div class="store-row">
+            <span class="store-badge disabled">Google Play · Yakında</span>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Geliştiriliyor</span>
-        <h3>🎂 AgeSnap</h3>
-        <p>Doğum bilgisine göre yaşanılan gün sayısı, fal yorumu ve ortalama yaşam süresi gibi kişiselleştirilmiş bilgiler sunan uygulama.</p>
-        <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Takvim</span></div>
+        <img class="project-shot" src="images/agesnap-cover.jpg" alt="AgeSnap uygulaması tanıtım görseli — yaş ve zaman istatistikleri ekranı" loading="lazy">
+        <div class="project-body">
+          <h3>🎂 AgeSnap</h3>
+          <p>Doğum bilgisine göre yaşanılan gün sayısı, fal yorumu ve ortalama yaşam süresi gibi kişiselleştirilmiş bilgiler sunan uygulama.</p>
+          <div class="tag-row"><span>Flutter</span><span>Firebase</span><span>Takvim</span></div>
+          <div class="store-row">
+            <span class="store-badge disabled">Google Play · Yakında</span>
+            <span class="store-badge disabled">App Store · Yakında</span>
+          </div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp live">Kişisel Kullanım</span>
-        <h3>📚 Leala</h3>
-        <p>Kişisel kullanım için geliştirilen İngilizce kelime ezberleme uygulaması.</p>
-        <div class="tag-row"><span>Flutter</span><span>Hive</span></div>
+        <div class="project-body">
+          <h3>📚 Leala</h3>
+          <p>Kişisel kullanım için geliştirilen İngilizce kelime ezberleme uygulaması.</p>
+          <div class="tag-row"><span>Flutter</span><span>Hive</span></div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp live">Ofis Aracı</span>
-        <h3>🚻 Arınma Odası</h3>
-        <p>"Bekletmeyiz, sıkıştırmayız." Ofis tuvalet kuyruğunu 15 dakikalık slotlarla rezervasyona bağlayan, esprili iç kaynak yönetim aracı.</p>
-        <div class="tag-row"><span>Node.js</span><span>Express</span></div>
+        <img class="project-shot" src="images/arinma-odasi.png" alt="Arınma Odası uygulaması ekran görüntüsü — randevu saat seçimi ve doluluk barı" loading="lazy">
+        <div class="project-body">
+          <h3>🚻 Arınma Odası</h3>
+          <p>"Bekletmeyiz, sıkıştırmayız." Ofis tuvalet kuyruğunu 15 dakikalık slotlarla rezervasyona bağlayan, esprili iç kaynak yönetim aracı.</p>
+          <div class="tag-row"><span>Node.js</span><span>Express</span></div>
+        </div>
       </div>
 
       <div class="project-card">
         <span class="stamp">Windows &amp; macOS</span>
-        <h3>🧘 Ergonomik Asistan</h3>
-        <p>Göz dinlendirme, duruş kontrolü, su içme ve yürüyüş molası gibi özelleştirilebilir hatırlatmalar sunan masaüstü uygulaması.</p>
-        <div class="tag-row"><span>Flutter Desktop</span></div>
+        <img class="project-shot" src="images/ergonomi-dashboard.jpg" alt="Ergonomik Asistan uygulaması ekran görüntüsü — etkinlik takip paneli" loading="lazy">
+        <div class="project-body">
+          <h3>🧘 Ergonomik Asistan</h3>
+          <p>Göz dinlendirme, duruş kontrolü, su içme ve yürüyüş molası gibi özelleştirilebilir hatırlatmalar sunan masaüstü uygulaması.</p>
+          <div class="tag-row"><span>Flutter Desktop</span></div>
+        </div>
       </div>
 
     </div>
